@@ -11,7 +11,7 @@
 			padding: 0;
 		  }
 		</style>
-		<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCi88agRDQzJsJKobAvNmhIwvVeRPjLVRM&libraries=places&sensor=false'></script>
+		<script src='https://m'></script>
 		<script src='https://jo74705.github.io/data.js'></script>
 	</head>
   <body>
@@ -28,18 +28,19 @@
 		for(var x in event_data){
 			var event_info = event_data[x];
 			var location = new google.maps.LatLng(event_info.Lng,event_info.Lat);
+			console.log('event_info.Lng:'+event_info.Lng+' event_info.Lat:'+event_info.Lat);
 			var marker = new google.maps.Marker({
 				position: location,
 				title: event_info.Title,
 				map: map
+				console.log('有建立');
 		});
 		}
       } 
-	  google.maps.event.addDomListener(window, 'load', initMap);
-	  //
+	  google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-    <!-- <script async defer -->
-    <!-- src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCi88agRDQzJsJKobAvNmhIwvVeRPjLVRM&callback=initMap"> -->
-    <!-- </script> -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCi88agRDQzJsJKobAvNmhIwvVeRPjLVRM&callback=initMap">
+    </script>
   </body>
 </html>
