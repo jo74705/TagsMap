@@ -27,8 +27,7 @@
 		for(var x in event_data){
 			var event_info = event_data[x];
 			var location = new google.maps.LatLng(event_info.Lng,event_info.Lat);
-			alert(event_info.Lng+event_info.Lat);
-			var marker = new google.maps.Maker({
+			var marker = new google.maps.Marker({
 				position: location,
 				title: event_info.Title,
 				map: map
