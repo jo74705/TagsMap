@@ -24,17 +24,42 @@
           zoom: 12,
           center: MyPlace
         });
-
+		var contentString=new Array();
+			                
 		for(var x in event_data){
 			var event_info = event_data[x];
+			//Content info
+			contentString[x]=
+							'<div class="content">'+
+							'<div id="siteNotice">'+
+							'</div>'+
+							'<h2 id="firstHeading" class="firstHeading">'+
+							event_info.Title+'</h2>'+
+							'<div id="bodyContent">'+
+							'<p><b>活動時間：</b>'+
+							event_info.Date[0]+'~'+event_info.Date[1]+'</p>'+
+							'<p><b>地址：</b>'+
+							'</div>'+
+								'</div>';
+			var infowindow = new google.maps.InfoWindow({
+			  content: contentString[x]
+			});
 			var location = new google.maps.LatLng(parseFloat(event_info.Lat),parseFloat(event_info.Lng));
 			console.log(parseInt(event_info.Lat),parseFloat(event_info.Lng));
-			var marker = new google.maps.Marker({
+			var markers=new Array();
+			markers[x] = new google.maps.Marker({
 				position: location,
 				title: event_info.Title,
-				map: map
-				
-		});
+				map: map,
+				html: contentString[x]
+			});
+			var marker = markers[x]
+			google.maps.event.addListener(marker, 'click', function () {
+			// where I have added .html to the marker object.
+			infowindow.setContent(this.html);
+			infowindow.open(map, this);
+			});
+			
 		}
 		}
        
