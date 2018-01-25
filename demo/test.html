@@ -39,8 +39,10 @@
 							'<p><b>活動時間：</b>'+
 							event_info.Date[0]+'~'+event_info.Date[1]+'</p>'+
 							'<p><b>地址：</b>'+
+							event_info.Address+
+							'<a href='+event_info.Url+'>活動網址</a>'+
 							'</div>'+
-								'</div>';
+							'</div>';
 			var infowindow = new google.maps.InfoWindow({
 			  content: contentString[x]
 			});
@@ -55,9 +57,9 @@
 			});
 			var marker = markers[x]
 			google.maps.event.addListener(marker, 'click', function () {
-			// where I have added .html to the marker object.
-			infowindow.setContent(this.html);
-			infowindow.open(map, this);
+				// where I have added .html to the marker object.
+				infowindow.setContent(this.html);
+				infowindow.open(map, this);
 			});
 			
 		}
