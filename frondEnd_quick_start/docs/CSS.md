@@ -1,57 +1,66 @@
-###HTML 基本介紹
+### CSS 基本介紹
 
-最基本的 HTML格式
+在網頁設計中，我們用 CSS 改變元素樣式
+
+#### CSS使用方法
+
+**CSS Selector (CSS選擇器)**
+
+當我們在 HTML 中定義元素後我們需要去找出我們要改變的元素
+
+例如我要改變下方`<div>`的背景顏色
 ```
-<!DOCTYPE html><html<!DOCTYPE html>
-<html>
-  <head>
-    <title>Page Title</title>
-  </head>
-
-  <body>
-    <h1>This is a Heading</h1>
-    <p>This is a paragraph.</p>
-  </body>
-</html>
-```
-
-存成.html檔後用瀏覽器打開的結果就會是下面這樣HTML 
-
-####Tag 通常 都是成雙成對的
-由兩個角括號圍繞起來的就成為Tag(標籤)
-例如常見的:
-```
-<div> </div>
-<a> </a>
-<span> </span>
+<div class="box">
+    
+</div>
 ```
 
-而如果我們在Tag中放如其他元素（純文字或是其他Tag）
-例如:
+那就要用
+
 ```
-<body>
-    <h1>This is a Heading</h1>
-    <p>This is a paragraph.</p>
-</body>
+.box {
+    background-color: "pink"
+}
 ```
-我們就會稱 `<h1/>` 和 `<p/>` 是 `<body/>` 的子元素 (child element)
-反過來說對於 `<h1>`，`<body>` 就是 `<h1>`的父元素(parent element)
-~~不要問我為什麼不叫母元素~~ https://www.zhihu.com/question/21111030
-常見的HTML Tag
-`<div>` `<a>` `<head>`
-都有不同的功能
 
-可以從W3C的網站檢視相對應的功能：<https://www.w3schools.com/html/html_elements.asp>
+翻成白話來說，就是我要修改某個`div` 的 class (attribute) 值為 "box" ，將其背景顏色改為粉紅色。
 
-完整Tag 列表：<https://www.w3schools.com/tags/default.asp>
+在 `.box{ }` 的大括號中放置CSS語法就是最基本的CSS使用方式。
 
-#HTML attribute
-###Attribute（特性) 
-~~不是attitude (態度）~~
+常用的 selector 方法：
+#### class
+算是最常用的，在 HTML 中允許多個元素擁有相同的 class 名稱，也就是說當我們需要多個元素擁有共同的style的時候，就非常方便。
+```
+.box{
 
-attribute特性由HTML定義，所有出現在HTML標籤內的描述節點都是attribute特性。
-<div id="test" class="button" custom-attr="1"></div>
+}
+<div  class="box"> </div>
+<div  class="box"> </div>
+<div  class="box"> </div>
+<div  class="box"> </div>
+```
+#### id
+在 HTML 中 id 是為一值，不建議使用。
+```
+#boxId1 {
 
-attribute的型態總會是**字串**
-以上面的DIV為例 *id* *class* *custom-attr* 都是 attribute
+}
+#boxId2 {
+ 
+}
+<div  class="boxId1"> </div>
+<div  class="boxId2"> </div>
+```
+#### 元素名稱 (a, li, div)
+
+針對本頁所有元素改變 style
+
+```
+li div {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
+```
 
