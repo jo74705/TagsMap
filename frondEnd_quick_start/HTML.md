@@ -1,4 +1,4 @@
-###HTML 基本介紹
+### HTML 基本介紹
 
 最基本的 HTML格式
 ```
@@ -17,7 +17,7 @@
 
 存成.html檔後用瀏覽器打開的結果就會是下面這樣HTML 
 
-####Tag 通常 都是成雙成對的
+#### Tag 通常 都是成雙成對的
 由兩個角括號圍繞起來的就成為Tag(標籤)
 例如常見的:
 ```
@@ -45,8 +45,8 @@
 
 完整Tag 列表：<https://www.w3schools.com/tags/default.asp>
 
-#HTML attribute
-###Attribute（特性) 
+# HTML attribute
+### Attribute（特性) 
 ~~不是attitude (態度）~~
 
 attribute特性由HTML定義，所有出現在HTML標籤內的描述節點都是attribute特性。
